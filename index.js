@@ -21,6 +21,7 @@ app.post(URI, async (req, res) => {
     const chatID = req.body.message.chat.id;
 
     console.log(text);
+    // Private chats check
     if (text == "Hello" || text == "HEY") {
         await axios.post(`${TELEGRAM_API}/sendMessage`, {
             chat_id: chatID,
@@ -28,7 +29,6 @@ app.post(URI, async (req, res) => {
 
         });
     } else {
-
         return res.send();
     }
 
